@@ -1,5 +1,5 @@
-gulp-js-obfuscator
-=============
+gulp-javascript-obfuscator
+==========================
 
 Gulp plugin for [javascript-obfuscator](https://github.com/javascript-obfuscator/javascript-obfuscator).
 
