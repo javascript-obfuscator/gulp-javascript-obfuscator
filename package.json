@@ -1,0 +1,25 @@
+{
+  "name": "gulp-javascript-obfuscator",
+  "version": "1.0.0",
+  "description": "Gulp plugin for javascript-obfuscator Node.JS package.",
+  "homepage": "http://github.com/wain-pc/gulp-javascript-obfuscator",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wain-pc/gulp-javascript-obfuscator.git"
+  },
+  "main": "index.js",
+  "keywords": [
+    "gulpplugin",
+    "obfuscate",
+    "obfuscation"
+  ],
+  "author": {
+    "name": "Wain-PC"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "javascript-obfuscator": "^0.7.3",
+    "gulp-util": "^3.0.5",
+    "through2": "^2.0.0"
+  }
+}
