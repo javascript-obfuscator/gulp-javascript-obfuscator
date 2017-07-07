@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git://github.com/wain-pc/gulp-javascript-obfuscator.git"
   },
+  "scripts": {
+    "test": "jest"
+  },
   "main": "index.js",
   "keywords": [
     "gulpplugin",
@@ -30,8 +33,19 @@
   },
   "license": "MIT",
   "dependencies": {
+    "gulp-util": "^3.0.8",
     "javascript-obfuscator": "latest",
-    "gulp-util": "^3.0.5",
-    "through2": "^2.0.0"
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "jest": "^20.0.4"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "index.js"
+    ]
   }
 }
