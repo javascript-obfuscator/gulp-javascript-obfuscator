@@ -27,7 +27,7 @@ module.exports = function gulpJavaScriptObfuscator(options) {
 						contents: new Buffer(obfuscationResult.getSourceMap())
 					}))
 				}
-				cb();
+				cb(null, file);
 			}
 			catch (err) {
 				throw new PluginError('gulp-javascript-obfuscator', err);
