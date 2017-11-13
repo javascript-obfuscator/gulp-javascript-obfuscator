@@ -29,7 +29,7 @@ gulp.src('file.js')
 ```javascript
 gulp.src('file.js')
     .pipe(javascriptObfuscator({
-        compact:true
+        compact:true,
         sourceMap: true
     }))
     .pipe(gulp.dest('dist'));
