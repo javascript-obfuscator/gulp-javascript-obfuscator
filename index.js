@@ -16,7 +16,7 @@ module.exports = function gulpJavaScriptObfuscator(options) {
 
 		if (file.isBuffer()) {
 			try {
-				obfuscationResult = JavaScriptObfuscator.obfuscate(String(file.contents), options);
+				obfuscationResult = JavaScriptObfuscator.obfuscate(String(file.contents), Object.assign(options, {identifiersPrefix: file.path.replace(/.*\/+|\W/g, '')}));
 				file.contents = new Buffer(obfuscationResult.getObfuscatedCode());
 				if(options.sourceMap && options.sourceMapMode !== 'inline') {
 					this.push(new gutil.File({
