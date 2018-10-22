@@ -1,30 +1,29 @@
-gulp-javascript-obfuscator
-==========================
+# gulp-javascript-obfuscator
 
-Gulp plugin for [javascript-obfuscator](https://github.com/javascript-obfuscator/javascript-obfuscator).
+Gulp plugin for [javascript-obfuscator](https://github.com/javascript-obfuscator/javascript-obfuscator)
 
 ## Installation
 
-Install the package with NPM:
+Install the package with npm:
 
-`npm install --save gulp-javascript-obfuscator`
+```bash
+$ npm install --save gulp-javascript-obfuscator
+```
 
 ## Usage
 
 ```javascript
-var gulp = require('gulp'),
-    javascriptObfuscator = require('gulp-javascript-obfuscator');
-
+const gulp = require('gulp');
+const javascriptObfuscator = require('gulp-javascript-obfuscator');
 
 gulp.src('file.js')
     .pipe(javascriptObfuscator())
     .pipe(gulp.dest('dist'));
 ```
 
-
 ## Options
 
-[Pass any options available in the obfuscator](https://github.com/javascript-obfuscator/javascript-obfuscator#javascript-obfuscator-options).
+[Pass any options available in the obfuscator](https://github.com/javascript-obfuscator/javascript-obfuscator#javascript-obfuscator-options)
 
 ```javascript
 gulp.src('file.js')
@@ -36,4 +35,3 @@ gulp.src('file.js')
 ```
 
 Using **sourceMap** option with value set to **true** will also output a _.map_ file to Gulp stream.
-
