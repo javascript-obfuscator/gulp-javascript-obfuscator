@@ -1,6 +1,6 @@
 {
   "name": "gulp-javascript-obfuscator",
-  "version": "1.1.6",
+  "version": "2.0.0",
   "description": "Gulp plugin for javascript-obfuscator Node.JS package",
   "homepage": "https://github.com/javascript-obfuscator/gulp-javascript-obfuscator",
   "repository": {
