@@ -28,10 +28,51 @@ gulp.src('file.js')
 ```javascript
 gulp.src('file.js')
     .pipe(javascriptObfuscator({
-        compact:true,
-        sourceMap: true
+        compact: true
     }))
     .pipe(gulp.dest('dist'));
 ```
 
-Using **sourceMap** option with value set to **true** will also output a _.map_ file to Gulp stream.
+The only exception is obfuscator's `sourceMap` option which will be handled automatically.
+
+## Source Maps
+
+With version `1.1.6` onwards, gulp-javascript-obfuscator can be used in tandem with [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps) in order to generate source maps for your javascript files.
+
+You will need to initialize gulp-sourcemaps prior to running gulp-javascript-obfuscator and write the source maps after, as such:
+
+```javascript
+const sourcemaps = require('gulp-sourcemaps');
+
+gulp.src('file.js')
+    .pipe(sourcemaps.init())
+    .pipe(javascriptObfuscator({
+        compact: true
+    }))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dist'));
+```
+
+This will output a `file.js.map` file to the **dist** directory.
+
+You can chain other gulp plugins as well:
+
+```javascript
+const sourcemaps = require('gulp-sourcemaps');
+
+gulp.src('file.js')
+    .pipe(sourcemaps.init())
+    // use babel to pre-process javascript files
+    .pipe(babel({
+        presets: ['@babel/preset-env']
+    }))
+    .pipe(javascriptObfuscator({
+        compact: true
+    }))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dist'));
+```
+
+### Alternative source maps method
+
+For backwards compatibility, using obfuscator's **sourceMap** option set to **true** will output a _.map_ file to Gulp stream. ([This is _deprecated_ and not recommended for future use.](https://github.com/javascript-obfuscator/gulp-javascript-obfuscator/pull/18))
