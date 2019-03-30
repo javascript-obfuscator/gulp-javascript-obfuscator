@@ -33,7 +33,7 @@ gulp.src('file.js')
     .pipe(gulp.dest('dist'));
 ```
 
-The only exception is obfuscator's `sourceMap` option which will be handled automatically.
+The only exception is obfuscator's `sourceMap` option which must not be set, as it will be handled automatically when using `gulp-sourcemaps`.
 
 ## Source Maps
 
@@ -75,4 +75,4 @@ gulp.src('file.js')
 
 ### Alternative source maps method
 
-For backwards compatibility, using obfuscator's **sourceMap** option set to **true** will output a _.map_ file to Gulp stream. ([This is _deprecated_ and not recommended for future use.](https://github.com/javascript-obfuscator/gulp-javascript-obfuscator/pull/18))
+For backwards compatibility, if `gulp-sourcemaps` is not used and obfuscator's **sourceMap** option is set to **true**, a _.map_ file will be thrown to Gulp stream. ([This method is _deprecated_ and not recommended for future use.](https://github.com/javascript-obfuscator/gulp-javascript-obfuscator/pull/18#backwards-compatibility))
