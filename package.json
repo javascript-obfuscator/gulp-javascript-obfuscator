@@ -27,13 +27,15 @@
   ],
   "author": "Wain-PC",
   "contributors": [
-    "adamxtokyo", "DRSDavidSoft"
+    "adamxtokyo",
+    "DRSDavidSoft"
   ],
   "license": "MIT",
   "dependencies": {
     "javascript-obfuscator": "latest",
     "plugin-error": "^1.0.1",
     "through2": "^2.0.0",
-    "vinyl": "^2.2.0"
+    "vinyl": "^2.2.0",
+    "vinyl-sourcemaps-apply": "^0.2.1"
   }
 }
