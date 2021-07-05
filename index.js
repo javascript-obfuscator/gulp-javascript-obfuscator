@@ -17,20 +17,10 @@ module.exports = function gulpJavaScriptObfuscator (options = {}) {
 		try {
 			const obfuscationResult = JavaScriptObfuscator.obfuscate(String(file.contents), options);
 			file.contents = new Buffer(obfuscationResult.getObfuscatedCode());
-			if (options.sourceMap && options.sourceMapMode !== 'inline') {
-				if ( file.sourceMap ) {
-					const sourceMap = JSON.parse(obfuscationResult.getSourceMap());
-					sourceMap.file = file.sourceMap.file;
-					applySourceMap(file, sourceMap);
-				}
-				else {
-					this.push(new Vinyl({
-						cwd: file.cwd,
-						base: file.base,
-						path: file.path + '.map',
-						contents: new Buffer(obfuscationResult.getSourceMap())
-					}))
-				}
+			if (file.sourceMap) {
+				const sourceMap = JSON.parse(obfuscationResult.getSourceMap());
+				sourceMap.file = file.sourceMap.file;
+				applySourceMap(file, sourceMap);
 			}
 			return cb(null, file);
 		} catch (err) {

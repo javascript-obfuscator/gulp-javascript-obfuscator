@@ -37,7 +37,7 @@ The only exception is obfuscator's `sourceMap` option which must not be set, as 
 
 ## Source Maps
 
-With version `1.1.6` onwards, gulp-javascript-obfuscator can be used in tandem with [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps) in order to generate source maps for your javascript files.
+`gulp-javascript-obfuscator` can be used in tandem with [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps) in order to generate source maps for your javascript files.
 
 You will need to initialize gulp-sourcemaps prior to running gulp-javascript-obfuscator and write the source maps after, as such:
 
@@ -72,7 +72,3 @@ gulp.src('file.js')
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist'));
 ```
-
-### Alternative source maps method
-
-For backwards compatibility, if `gulp-sourcemaps` is not used and obfuscator's **sourceMap** option is set to **true**, a _.map_ file will be thrown to Gulp stream. ([This method is _deprecated_ and not recommended for future use.](https://github.com/javascript-obfuscator/gulp-javascript-obfuscator/pull/18#backwards-compatibility))
