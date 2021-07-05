@@ -72,4 +72,3 @@ gulp.src('file.js')
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist'));
 ```
-
