@@ -31,7 +31,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "javascript-obfuscator": "latest",
+    "javascript-obfuscator": "1.12.1",
     "plugin-error": "^1.0.1",
     "through2": "^2.0.0",
     "vinyl": "^2.2.0"
